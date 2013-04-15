@@ -1,11 +1,15 @@
 (function(){
-    $('.raw_json').keyup(function(evt) {
-        var rawJSON = $(".raw_json").val();
+    'use strict';
+    var _gcn = function(className) { return document.getElementsByClassName(className)[0]; },
+        $output = _gcn('output'),
+        $rawJSON = _gcn('raw_json');
+    _gcn('raw_json').onkeyup = function(evt) {
         try {
-            var oDict = Dictionary.stringify(JSON.parse(rawJSON), null, '  ');
-            $(".output").removeClass('error').val(oDict);                     
+            $output.className = 'output'; 
+            $output.value = Dictionary.stringify(JSON.parse($rawJSON.value), null, '  ');                      
         } catch (ex) {
-            $(".output").addClass('error').val(ex.message);
+            $output.className = 'output error';
+            $output.value = ex.message;
         }
-    });
+    };
 })();
