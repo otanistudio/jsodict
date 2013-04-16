@@ -1,0 +1,28 @@
+.stuff {
+    width:700px;
+    margin:auto;
+}
+h1 {
+    font-family:"Lucida Grande", sans-serif;        
+}
+textarea {
+    display:block;
+    width: 100%;
+    font-family: Monaco,monospace;
+    font-size: 13px;    
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 8px;
+    padding: 10px;            
+}
+.raw_json {
+    height:180px;
+}
+.output {
+    height:280px;
+    margin-top:21px;
+}   
+
+.error {
+    color:red;
+}
+
